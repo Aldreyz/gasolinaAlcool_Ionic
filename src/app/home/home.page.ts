@@ -7,6 +7,28 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public resultado:String="resultado"
+  public precoAlcool: number
+  public precoGasolina: number
+
+
+  calcular(){
+     if(this.precoAlcool && this.precoGasolina){
+       
+        var pAlcool = this.precoAlcool
+        var pGasolina = this.precoGasolina
+
+        var res = pAlcool / pGasolina 
+
+        if(res>=0.7){
+          this.resultado = "Melhor utilizar gasolina"
+        }else{
+          this.resultado = "Melhor utilizar alcool"
+        }
+
+     }else{
+        this.resultado="Preencha corretamente os campos!"
+     }
+  }
 
 }
